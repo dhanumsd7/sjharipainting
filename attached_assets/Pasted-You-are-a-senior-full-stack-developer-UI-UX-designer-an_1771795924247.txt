@@ -1,0 +1,175 @@
+You are a senior full-stack developer, UI/UX designer, and SEO specialist.
+
+Build a clean, minimal, high-conversion website for a local service business.
+
+The main goal of this website is:
+→ Visitor selects a service
+→ Clicks a button
+→ That selection is sent directly to the business owner’s WhatsApp
+
+Avoid unnecessary content, long sentences, or decorative sections.
+
+────────────────────────────
+BUSINESS DETAILS
+────────────────────────────
+Website Name / Brand: SJ Hari Painting  
+Business Type: Painting & Building Maintenance Services  
+Location: Ammandivilai, Tamil Nadu, India  
+
+Owner Name: Sooriya Kumar T  
+WhatsApp / Phone:
+- 9626344778
+- 9677899278  
+Email: sooriya887@gmail.com  
+
+────────────────────────────
+SERVICES (CORE FEATURE)
+────────────────────────────
+These services must be shown clearly as selectable options:
+
+1. Painting Works  
+2. Spray Painting  
+3. Sprat Painting  
+4. Spider Work (High-rise rope access)  
+5. Powder Coating  
+6. Glass Cleaning  
+7. High Profile Building Painting Works  
+
+Each service must be:
+- Displayed as a clean card or button
+- Clickable
+- When selected → opens WhatsApp with:
+  “Hello, I am interested in [Selected Service] from SJ Hari Painting.”
+
+────────────────────────────
+WEBSITE STRUCTURE (SIMPLE & CLEAR)
+────────────────────────────
+Only include essential pages:
+
+/ → Home (main conversion page)
+/about → Short & trust-focused
+/contact → Direct call, WhatsApp, map
+
+NO unnecessary gallery pages.
+NO long blog-style content.
+NO filler marketing sentences.
+
+────────────────────────────
+HOMEPAGE UX (VERY IMPORTANT)
+────────────────────────────
+Above the fold:
+- Business name: SJ Hari Painting
+- One clear line:
+  “Professional Painting & Building Maintenance Services”
+- Two strong buttons:
+  [Call Now]   [WhatsApp Now]
+
+Main section:
+- “Select a Service” heading
+- Service cards (click → WhatsApp)
+
+Trust section (short):
+- Experienced team
+- Safety-focused work
+- Affordable pricing
+- On-time completion
+
+Final CTA:
+- “Contact SJ Hari Painting Today”
+- Call + WhatsApp buttons
+
+────────────────────────────
+DESIGN & COLOR PALETTE (FROM POSTER)
+────────────────────────────
+Use a bold, professional color scheme inspired by the poster:
+
+Primary:
+- Bright Yellow
+- Strong Pink / Magenta
+
+Secondary:
+- White background
+- Dark charcoal / black text
+
+Design rules:
+- High contrast
+- Big readable text
+- Bold headings
+- Minimal content
+- No clutter
+
+────────────────────────────
+ANIMATION & UX (SUBTLE ONLY)
+────────────────────────────
+Use light animations to improve clarity, not decoration.
+
+Rules:
+- Fast loading
+- No heavy animations
+- No distracting motion
+
+Allowed animations:
+- Hero text fade-in / slide-up
+- Service cards hover lift
+- Button hover highlight
+- Smooth page transitions
+
+Use Framer Motion or lightweight CSS transitions.
+
+────────────────────────────
+TECH STACK (MANDATORY)
+────────────────────────────
+Framework: Next.js (App Router)  
+Styling: Tailwind CSS  
+Animations: Framer Motion (light use)  
+Rendering: SEO-friendly SSR  
+Hosting target: Vercel  
+
+────────────────────────────
+SEO (LOCAL & CLEAN)
+────────────────────────────
+Apply basic but correct SEO:
+
+- Page title:
+  “SJ Hari Painting – Painting Services in Ammandivilai”
+
+- Meta description:
+  “Professional painting, spray painting, spider work, and building maintenance services in Ammandivilai. Call or WhatsApp SJ Hari Painting today.”
+
+- H1:
+  “Professional Painting Services in Ammandivilai”
+
+- Use service + location keywords naturally
+- Mobile-first design
+- Fast performance
+
+────────────────────────────
+WHATSAPP INTEGRATION (CRITICAL)
+────────────────────────────
+Implement WhatsApp deep links so that:
+- Clicking a service auto-fills message
+- Message includes service name
+- Opens WhatsApp directly
+
+Example format:
+https://wa.me/919626344778?text=Hello%20I%20am%20interested%20in%20Painting%20Works%20from%20SJ%20Hari%20Painting
+
+────────────────────────────
+DELIVERABLE
+────────────────────────────
+Generate:
+- Clean, minimal Next.js project
+- Clear service selection UI
+- WhatsApp-based lead flow
+- Mobile-friendly UX
+- SEO-ready structure
+- Production-ready code
+
+Avoid:
+- Unnecessary text
+- Decorative galleries
+- Long paragraphs
+- Over-animation
+
+Focus on:
+CLARITY → SERVICE SELECTION → WHATSAPP CONVERSION
