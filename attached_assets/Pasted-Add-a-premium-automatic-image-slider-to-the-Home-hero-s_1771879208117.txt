@@ -1,0 +1,78 @@
+Add a premium, automatic image slider to the Home (hero) section.
+
+GOAL:
+Make the homepage feel modern, professional, and premium using a smooth, unstoppable image slider that matches the brand UI and colors.
+
+-----------------------------------
+SLIDER REQUIREMENTS
+-----------------------------------
+- Automatically slides continuously (no pause, no stop)
+- No arrows, no dots, no manual controls
+- Smooth fade or slow slide transition
+- Infinite loop
+- Performance optimized
+- Mobile responsive
+
+-----------------------------------
+IMAGES
+-----------------------------------
+Use 10 high-quality images related to:
+- House painting
+- Building painting
+- Spray painting
+- High-rise spider work
+- Glass cleaning
+- Professional painters at work
+
+Images should:
+- Match yellow / pink / white brand palette
+- Look professional (not stocky or cheap)
+- Be optimized (lazy-loaded, compressed)
+- Stored in /public/images/hero/
+
+-----------------------------------
+DESIGN & UX
+-----------------------------------
+- Slider should act as a visual background or right-side visual
+- Apply a subtle dark or brand-colored overlay for text readability
+- Hero text must remain clear and readable on all images
+- No text jumping during slide change
+
+-----------------------------------
+ANIMATION
+-----------------------------------
+- Use Framer Motion OR lightweight CSS animation
+- Transition duration: slow and elegant
+- No flashy effects
+- Respect reduced-motion preferences
+
+-----------------------------------
+CONTENT OVERLAY
+-----------------------------------
+Overlay the slider with:
+- H1: “Professional Painting Services in Ammandivilai”
+- Subtext: “Painting & Building Maintenance Services”
+- Two CTA buttons:
+  [ Call Now ]
+  [ WhatsApp Now ]
+
+Buttons must remain fixed while images slide.
+
+-----------------------------------
+PERFORMANCE RULES
+-----------------------------------
+- Do NOT block page load
+- Use optimized images
+- Avoid heavy JS libraries
+- Mobile-first behavior
+
+-----------------------------------
+FINAL GOAL
+-----------------------------------
+The hero section should feel:
+- Premium
+- Trustworthy
+- Calm
+- Professional
+
+It should look like a high-end local service business website, not a template or AI demo.
