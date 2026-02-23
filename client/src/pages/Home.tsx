@@ -13,13 +13,12 @@ export default function Home() {
   return (
     <div className="flex flex-col min-h-screen pb-20 md:pb-0">
       <Helmet>
-        <title>Premium Painting Services in Ammandivilai | Professional Painters</title>
+        <title>SJ Hari Painting – Painting Services in Ammandivilai</title>
         <meta 
           name="description" 
-          content="Top-rated building painting contractors in Ammandivilai. We specialize in residential, commercial, and spider work painting in Tamil Nadu. Call now for a free quote!" 
+          content="Professional painting, spray painting, spider work, and building maintenance services in Ammandivilai. Call or WhatsApp SJ Hari Painting today." 
         />
-        <meta name="keywords" content="Painting services in Ammandivilai, Building painting contractors near me, Spider work painting in Tamil Nadu, House painters Nagercoil, Waterproofing Kanyakumari" />
-        <link rel="canonical" href="https://ammandivilaipainters.com" />
+        <meta name="keywords" content="SJ Hari Painting, Painting services in Ammandivilai, Spray Painting, Spider Work Ammandivilai, Building Maintenance Tamil Nadu" />
       </Helmet>
 
       <Navbar />
@@ -28,8 +27,6 @@ export default function Home() {
         <Hero />
         <Services />
         <WhyChooseUs />
-        <Gallery />
-        <ServiceAreas />
         <Contact />
       </main>
 

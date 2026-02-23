@@ -173,7 +173,9 @@ export function Contact() {
                   </div>
                   <div>
                     <p className="text-sm text-slate-400 mb-1">Call Us Directly</p>
-                    <a href="tel:+919876543210" className="text-lg font-semibold hover:text-accent transition-colors">+91 98765 43210</a>
+                    <a href="tel:+919626344778" className="text-lg font-semibold hover:text-accent transition-colors">+91 96263 44778</a>
+                    <br/>
+                    <a href="tel:+919677899278" className="text-lg font-semibold hover:text-accent transition-colors">+91 96778 99278</a>
                   </div>
                 </div>
 
@@ -183,7 +185,7 @@ export function Contact() {
                   </div>
                   <div>
                     <p className="text-sm text-slate-400 mb-1">Email Address</p>
-                    <a href="mailto:info@ammandivilaipainters.com" className="text-lg font-semibold hover:text-accent transition-colors">info@ammandivilaipainters.com</a>
+                    <a href="mailto:sooriya887@gmail.com" className="text-lg font-semibold hover:text-accent transition-colors">sooriya887@gmail.com</a>
                   </div>
                 </div>
 
@@ -193,7 +195,7 @@ export function Contact() {
                   </div>
                   <div>
                     <p className="text-sm text-slate-400 mb-1">Office Location</p>
-                    <p className="text-lg font-semibold">123 Main Road,<br/>Ammandivilai, TN 629204</p>
+                    <p className="text-lg font-semibold">Ammandivilai,<br/>Tamil Nadu, India</p>
                   </div>
                 </div>
 

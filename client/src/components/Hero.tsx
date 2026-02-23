@@ -35,33 +35,31 @@ export function Hero() {
           </div>
 
           {/* Headline */}
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold text-white leading-[1.1] mb-6 text-balance">
-            Transform Your Space with <span className="text-accent">Flawless Finishes</span>
+          <h1 className="text-5xl md:text-7xl font-extrabold text-white leading-[1.1] mb-6 text-balance">
+            SJ Hari Painting
           </h1>
 
           {/* Subheadline */}
-          <p className="text-lg md:text-xl text-slate-300 mb-10 max-w-2xl leading-relaxed">
-            Expert residential, commercial, and specialized spider-work painting services. We bring color to life with premium materials and unmatched precision.
+          <p className="text-xl md:text-2xl text-white font-medium mb-10 max-w-2xl leading-relaxed">
+            Professional Painting & Building Maintenance Services
           </p>
 
           {/* CTAs */}
           <div className="flex flex-col sm:flex-row gap-5">
             <Button 
               size="lg" 
-              onClick={scrollToContact}
-              className="bg-accent hover:bg-accent/90 text-white rounded-full text-lg h-14 px-8 shadow-[0_0_30px_rgba(249,115,22,0.3)] hover:shadow-[0_0_40px_rgba(249,115,22,0.5)] hover:-translate-y-1 transition-all"
+              onClick={() => window.open('https://wa.me/919626344778', '_blank')}
+              className="bg-primary hover:bg-primary/90 text-white rounded-none text-xl h-16 px-10 font-bold uppercase tracking-wider transition-all"
             >
-              Get a Free Estimate
-              <ArrowRight className="ml-2 w-5 h-5" />
+              WhatsApp Now
             </Button>
             <Button 
               size="lg" 
               variant="outline" 
-              onClick={() => window.location.href = 'tel:+919876543210'}
-              className="rounded-full text-lg h-14 px-8 border-white/30 text-white hover:bg-white hover:text-slate-900 bg-white/5 backdrop-blur-sm transition-all"
+              onClick={() => window.location.href = 'tel:+919626344778'}
+              className="rounded-none text-xl h-16 px-10 border-4 border-white text-white hover:bg-white hover:text-black bg-transparent font-bold uppercase tracking-wider transition-all"
             >
-              <Phone className="mr-2 w-5 h-5" />
-              Call +91 98765 43210
+              Call Now
             </Button>
           </div>
 

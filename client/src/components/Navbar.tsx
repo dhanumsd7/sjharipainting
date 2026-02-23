@@ -14,14 +14,6 @@ export function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const navLinks = [
-    { name: "Home", href: "#home" },
-    { name: "Services", href: "#services" },
-    { name: "Why Us", href: "#why-us" },
-    { name: "Gallery", href: "#gallery" },
-    { name: "Areas", href: "#areas" },
-  ];
-
   const scrollTo = (href: string) => {
     setMobileMenuOpen(false);
     const element = document.querySelector(href);
@@ -42,7 +34,7 @@ export function Navbar() {
   return (
     <header 
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? "glass-nav py-3" : "bg-transparent py-5"
+        isScrolled ? "bg-white/90 backdrop-blur-md py-3 shadow-md" : "bg-transparent py-5"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -52,56 +44,41 @@ export function Navbar() {
             className="flex items-center gap-2 cursor-pointer group"
             onClick={() => scrollTo("#home")}
           >
-            <div className="w-10 h-10 rounded-xl bg-primary flex items-center justify-center text-white shadow-lg group-hover:bg-accent transition-colors">
-              <Paintbrush size={24} />
+            <div className="w-10 h-10 rounded-none border-2 border-black bg-primary flex items-center justify-center text-white shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] group-hover:bg-accent transition-colors">
+              <Paintbrush size={24} className="text-white" />
             </div>
             <div>
-              <h1 className={`font-bold text-xl leading-none ${isScrolled ? 'text-foreground' : 'text-white'}`}>
-                Ammandivilai
+              <h1 className={`font-black text-2xl leading-none uppercase tracking-tighter ${isScrolled ? 'text-black' : 'text-white'}`}>
+                SJ Hari
               </h1>
-              <p className={`text-xs font-semibold tracking-wider uppercase ${isScrolled ? 'text-primary' : 'text-accent'}`}>
-                Painting Contractors
+              <p className={`text-[10px] font-black tracking-[0.2em] uppercase ${isScrolled ? 'text-primary' : 'text-accent'}`}>
+                Painting
               </p>
             </div>
           </div>
 
-          {/* Desktop Nav */}
-          <nav className="hidden md:flex items-center gap-8">
-            {navLinks.map((link) => (
-              <button
-                key={link.name}
-                onClick={() => scrollTo(link.href)}
-                className={`text-sm font-semibold transition-colors hover:text-accent ${
-                  isScrolled ? 'text-foreground/80' : 'text-white/90 hover:text-white'
-                }`}
-              >
-                {link.name}
-              </button>
-            ))}
-          </nav>
-
           {/* Desktop CTA */}
-          <div className="hidden md:flex items-center gap-4">
-            <Button 
-              className="bg-accent hover:bg-accent/90 text-white rounded-full shadow-lg shadow-accent/20"
-              onClick={() => scrollTo("#contact")}
-            >
-              Get Free Quote
-            </Button>
+          <div className="hidden md:flex items-center gap-6">
             <a 
-              href="tel:+919876543210" 
-              className={`flex items-center gap-2 font-bold transition-colors hover:text-accent ${
-                isScrolled ? 'text-primary' : 'text-white'
+              href="tel:+919626344778" 
+              className={`flex items-center gap-2 font-black text-lg transition-colors hover:text-primary ${
+                isScrolled ? 'text-black' : 'text-white'
               }`}
             >
-              <Phone size={18} />
-              <span>+91 98765 43210</span>
+              <Phone size={20} />
+              <span>96263 44778</span>
             </a>
+            <Button 
+              className="bg-primary hover:bg-primary/90 text-white rounded-none font-black uppercase tracking-widest px-8 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]"
+              onClick={() => window.open('https://wa.me/919626344778', '_blank')}
+            >
+              WhatsApp
+            </Button>
           </div>
 
           {/* Mobile Menu Toggle */}
           <button 
-            className={`md:hidden p-2 rounded-lg ${isScrolled ? 'text-foreground' : 'text-white'}`}
+            className={`md:hidden p-2 rounded-lg ${isScrolled ? 'text-black' : 'text-white'}`}
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           >
             {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -111,22 +88,20 @@ export function Navbar() {
 
       {/* Mobile Menu Dropdown */}
       {mobileMenuOpen && (
-        <div className="absolute top-full left-0 right-0 bg-background border-b border-border shadow-xl md:hidden">
-          <div className="flex flex-col p-4 space-y-4">
-            {navLinks.map((link) => (
-              <button
-                key={link.name}
-                onClick={() => scrollTo(link.href)}
-                className="text-left text-lg font-medium text-foreground py-2 border-b border-border/50"
-              >
-                {link.name}
-              </button>
-            ))}
-            <Button 
-              className="w-full bg-accent hover:bg-accent/90 text-white rounded-xl h-12 text-lg mt-4"
-              onClick={() => scrollTo("#contact")}
+        <div className="absolute top-full left-0 right-0 bg-white border-b-4 border-black shadow-xl md:hidden">
+          <div className="flex flex-col p-6 space-y-6">
+            <a 
+              href="tel:+919626344778" 
+              className="flex items-center gap-3 font-black text-xl text-black uppercase"
             >
-              Get Free Quote
+              <Phone size={24} />
+              <span>Call Now</span>
+            </a>
+            <Button 
+              className="w-full bg-primary hover:bg-primary/90 text-white rounded-none h-14 text-xl font-black uppercase shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]"
+              onClick={() => window.open('https://wa.me/919626344778', '_blank')}
+            >
+              WhatsApp
             </Button>
           </div>
         </div>
