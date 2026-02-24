@@ -1,0 +1,69 @@
+You must MODIFY THE ACTUAL CODE, not explain.
+
+TASK 1 — FIX MOBILE NAVIGATION (CRITICAL BUG)
+
+Problem:
+On mobile view, clicking navbar items (Home, Services, About, Contact) does not navigate to their pages.
+
+Root cause:
+Mobile menu overlay and background layers are blocking touch events and navigation logic is incorrect.
+
+Required Fix:
+- Use next/link for ALL navigation items
+- Do NOT use divs for navigation
+- Close the mobile menu BEFORE navigation happens
+- Ensure mobile menu is above all layers (correct z-index)
+- Ensure no background, slider, or animation blocks touch events
+- Ensure pointer-events are correctly set
+
+MANDATORY IMPLEMENTATION:
+- Navbar must be a client component
+- Use useState to control mobile menu open/close
+- Each mobile link must call setOpen(false) on click
+- Use semantic <Link> and <a> elements only
+
+EXPECTED RESULT:
+All navbar links must work perfectly on real mobile devices.
+
+--------------------------------------------------
+
+TASK 2 — ADD SUBTLE PAINT-STAR BACKGROUND ANIMATION
+
+Goal:
+Add tiny, slow-moving paint/star dots in the background to enhance premium look WITHOUT breaking any functionality.
+
+Implementation rules:
+- Use Canvas or CSS animation (preferred Canvas)
+- Very small dots
+- Colors only: yellow and pink
+- Slow floating motion
+- Animation must be subtle
+- pointer-events: none (MANDATORY)
+- Very low z-index
+- Must NOT block any clicks, scrolling, or routing
+
+Placement:
+- Render once globally (layout.tsx)
+- Behind all content
+
+--------------------------------------------------
+
+TASK 3 — DO NOT BREAK EXISTING FEATURES
+
+Rules:
+- Do NOT remove existing hero slider
+- Do NOT change routing structure
+- Do NOT affect SEO
+- Do NOT slow down the website
+- Mobile-first behavior required
+
+--------------------------------------------------
+
+FINAL VALIDATION (MUST PASS):
+- Mobile navbar links route correctly
+- Menu closes after clicking link
+- Background stars animate visibly
+- Buttons remain clickable
+- Website still feels premium
+
+If any existing code prevents this behavior, REFACTOR it safely.

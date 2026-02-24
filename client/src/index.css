@@ -79,3 +79,12 @@
     @apply bg-background/90 backdrop-blur-md border-b border-border/50 shadow-sm;
   }
 }
+
+
+.pointer-events-none-all {
+  pointer-events: none !important;
+}
+
+.z-background {
+  z-index: -10 !important;
+}
