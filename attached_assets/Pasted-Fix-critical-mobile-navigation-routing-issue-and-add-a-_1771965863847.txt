@@ -1,0 +1,67 @@
+Fix critical mobile navigation routing issue and add a subtle background animation.
+
+==============================
+TASK 1: FIX MOBILE NAVBAR ROUTING
+==============================
+Problem:
+On mobile view, navbar items (Home, Services, About, Contact) are not navigating when tapped.
+
+Fix requirements:
+- Use next/link properly for ALL nav items
+- Ensure mobile menu closes BEFORE route change
+- Remove any overlay or background blocking touch events
+- Ensure correct z-index stacking
+- Ensure clickable elements are <a> or <Link>, not plain divs
+- Fix pointer-events issues
+- Ensure mobile menu is fully interactive on touch devices
+
+Implementation rules:
+- Mobile menu must be above all content (z-index)
+- Background elements must NOT intercept clicks
+- Use onClick handlers that close menu first, then navigate
+- Test navigation on real mobile viewport
+
+Goal:
+All navbar items must work perfectly on mobile and desktop.
+
+==============================
+TASK 2: ADD TINY PAINT-STAR BACKGROUND ANIMATION
+==============================
+Add a subtle, decorative background animation across the site.
+
+Animation concept:
+- Tiny paint splatter / star-like dots
+- Very small size
+- Colors: yellow and pink (brand colors)
+- Slow floating or drifting motion
+- Random positions
+- Calm and elegant
+
+Technical rules (VERY IMPORTANT):
+- Animation must NOT block any clicks
+- Use pointer-events: none
+- Very low z-index OR fixed background layer
+- Lightweight CSS or Canvas-based animation
+- No heavy libraries
+- Respect reduced-motion preferences
+
+Placement:
+- Behind all content
+- Visible but subtle
+- Should not reduce readability
+
+==============================
+DESIGN & PERFORMANCE RULES
+==============================
+- Do NOT break existing layout
+- Do NOT affect SEO
+- Do NOT slow down page load
+- Mobile-first behavior
+- Clean, premium feel
+
+==============================
+FINAL GOAL
+==============================
+- Mobile navbar works 100%
+- Background animation adds premium feel
+- Website remains fast, clean, and professional
