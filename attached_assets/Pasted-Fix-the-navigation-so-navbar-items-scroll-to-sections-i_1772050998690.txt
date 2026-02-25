@@ -1,0 +1,80 @@
+Fix the navigation so navbar items scroll to sections instead of routing to non-existing pages.
+
+==================================================
+PART 1: FIX 404 NAVIGATION ISSUE (CRITICAL)
+==================================================
+Problem:
+Clicking “Services” or “About” leads to a 404 page.
+These are sections on the Home page, not separate routes.
+
+Required behavior:
+- Home page route remains "/"
+- Navbar links must scroll to sections inside Home page
+- Do NOT navigate to /services or /about
+- Smooth scrolling required
+- Mobile and desktop must work identically
+- Mobile menu must close before scrolling
+
+Implementation rules:
+- Use section IDs on Home page:
+  #home
+  #services
+  #why-us
+  #contact
+- Navbar click logic:
+  - If user is already on "/": scroll to section
+  - If user is on another route: navigate to "/" first, then scroll
+- Do NOT use hash routing in the URL
+- Do NOT break existing routing or layout
+- Keep animations and styling intact
+
+==================================================
+PART 2: ADD PREMIUM SERVICE IMAGES (WITHOUT BREAKING UI)
+==================================================
+Enhance the Services section visually.
+
+Requirements:
+- Add one high-quality image per service
+- Images must make the site feel premium
+- Images must NOT disturb layout or functionality
+- Images must be responsive and optimized
+- Images must match brand colors (yellow, pink, white)
+
+Services and image themes:
+1. Painting Works → professional house painting image
+2. Spray Painting → spray painting wall image
+3. Sprat Painting → industrial spray coating image
+4. Spider Work → high-rise rope access worker image
+5. Powder Coating → metal powder coating process image
+6. Glass Cleaning → professional glass cleaning image
+7. High Profile Building Painting → large commercial building painting image
+
+Technical rules:
+- Store images in /public/services/
+- Use optimized formats
+- Add proper alt text for SEO
+- Layout: image + service title + short text
+- No galleries, no sliders inside services
+
+==================================================
+PART 3: SAFETY RULES (DO NOT BREAK ANYTHING)
+==================================================
+- Do NOT change existing routing structure
+- Do NOT introduce new routes
+- Do NOT remove WhatsApp functionality
+- Do NOT break mobile navbar
+- Do NOT block clicks
+- Keep background animations working
+- Keep performance fast
+
+==================================================
+FINAL EXPECTED RESULT
+==================================================
+✔ Clicking Services/About scrolls to correct section  
+✔ No 404 page appears  
+✔ Works on mobile and desktop  
+✔ Services section looks premium with images  
+✔ Navbar, animations, and WhatsApp still work  
+
+Modify actual code files to achieve this.
+Do not explain — implement.
