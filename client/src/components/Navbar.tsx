@@ -7,7 +7,7 @@ import {
   Home,
   Info,
   Briefcase,
-  MessageSquare
+  MessageSquare,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { motion, AnimatePresence } from "framer-motion";
@@ -18,163 +18,164 @@ export function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [location, setLocation] = useLocation();
 
-  /* ----------------------------------
-     Scroll state (navbar shadow)
-  ---------------------------------- */
   useEffect(() => {
-    const handleScroll = () => setIsScrolled(window.scrollY > 10);
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    const onScroll = () => setIsScrolled(window.scrollY > 40);
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  /* ----------------------------------
-     Correct section navigation logic
-  ---------------------------------- */
   const handleNavClick = (href: string) => {
     setMobileMenuOpen(false);
 
-    // Section-based navigation
     if (href.startsWith("/#")) {
       const id = href.replace("/#", "");
-
       const scrollToSection = () => {
-        const element = document.getElementById(id);
-        if (!element) return;
-
-        const offset = 80; // navbar height
+        const el = document.getElementById(id);
+        if (!el) return;
         const y =
-          element.getBoundingClientRect().top +
+          el.getBoundingClientRect().top +
           window.pageYOffset -
-          offset;
-
-        window.scrollTo({
-          top: y,
-          behavior: "smooth"
-        });
+          80;
+        window.scrollTo({ top: y, behavior: "smooth" });
       };
 
-      // If already on home, scroll directly
       if (location === "/") {
         scrollToSection();
       } else {
-        // Navigate to home first, then scroll
         setLocation("/");
-        setTimeout(scrollToSection, 150);
+        setTimeout(scrollToSection, 200);
       }
-
       return;
     }
 
-    // Fallback route navigation
     setLocation(href);
   };
 
-  /* ----------------------------------
-     NAV LINKS (SECTION-BASED)
-  ---------------------------------- */
   const navLinks = [
     { name: "Home", href: "/#home", icon: <Home size={18} /> },
     { name: "Services", href: "/#services", icon: <Briefcase size={18} /> },
     { name: "About", href: "/#why-us", icon: <Info size={18} /> },
-    { name: "Contact", href: "/#contact", icon: <MessageSquare size={18} /> }
+    { name: "Contact", href: "/#contact", icon: <MessageSquare size={18} /> },
   ];
 
   return (
     <motion.header
       initial={{ y: -80 }}
       animate={{ y: 0 }}
-      className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-300 ${
-        isScrolled
-          ? "bg-white/95 backdrop-blur-md py-2 shadow-sm"
-          : "bg-white py-4"
-      }`}
+      className="fixed top-6 inset-x-0 z-40"
     >
       <div className="max-w-7xl mx-auto px-4">
-        <div className="flex items-center justify-between h-14 md:h-16">
-          {/* LOGO */}
-          <Link
-            href="/"
-            onClick={() => handleNavClick("/#home")}
-            className="flex items-center gap-2 group"
-          >
-            <div className="w-9 h-9 rounded-lg bg-primary flex items-center justify-center transition-transform group-hover:scale-105">
-              <Paintbrush size={20} className="text-white" />
-            </div>
-            <h1 className="font-bold text-lg md:text-xl text-slate-900 tracking-tight">
-              SJ Hari <span className="text-primary">Painting</span>
-            </h1>
-          </Link>
-
-          {/* DESKTOP NAV */}
-          <nav className="hidden md:flex items-center gap-6 lg:gap-8">
-            {navLinks.map(link => (
-              <button
-                key={link.name}
-                onClick={() => handleNavClick(link.href)}
-                className="relative text-sm font-semibold text-slate-600 hover:text-primary transition-colors"
-              >
-                {link.name}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all group-hover:w-full"></span>
-              </button>
-            ))}
-
-            <Button
-              className="bg-accent text-slate-900 rounded-full font-bold px-5 h-9 hover:scale-105 transition"
-              onClick={() =>
-                window.open("https://wa.me/919626344778", "_blank")
-              }
+        {/* ULTRA GLASS PILL */}
+        <div
+          className={`
+            transition-all duration-300
+            ${
+              isScrolled
+                ? "bg-white/90 backdrop-blur-lg border border-slate-200 shadow-md"
+                : "bg-white/[0.08] backdrop-blur-[40px] border border-white/40 shadow-[0_15px_60px_rgba(0,0,0,0.25)]"
+            }
+            rounded-full
+          `}
+        >
+          <div className="flex h-14 md:h-16 items-center justify-between px-8">
+            {/* Logo */}
+            <Link
+              href="/"
+              onClick={() => handleNavClick("/#home")}
+              className="flex items-center gap-2"
             >
-              WhatsApp
-            </Button>
-          </nav>
+              <div className="w-9 h-9 rounded-full bg-primary flex items-center justify-center">
+                <Paintbrush size={20} className="text-white" />
+              </div>
+              <span
+                className={`font-bold text-lg md:text-xl tracking-tight ${
+                  isScrolled ? "text-slate-900" : "text-white"
+                }`}
+              >
+                SJ Hari <span className="text-primary">Painting</span>
+              </span>
+            </Link>
 
-          {/* MOBILE TOGGLE */}
-          <button
-            className="md:hidden p-2 text-slate-900 z-[110]"
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            aria-label="Toggle Menu"
-          >
-            {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
+            {/* Desktop Nav */}
+            <nav className="hidden md:flex items-center gap-8">
+              {navLinks.map((link) => (
+                <button
+                  key={link.name}
+                  onClick={() => handleNavClick(link.href)}
+                  className={`text-sm font-semibold transition-colors ${
+                    isScrolled
+                      ? "text-slate-700 hover:text-primary"
+                      : "text-white/90 hover:text-white"
+                  }`}
+                >
+                  {link.name}
+                </button>
+              ))}
+
+              <Button
+                className="bg-accent text-slate-900 rounded-full h-9 px-6 font-bold hover:scale-105 transition"
+                onClick={() =>
+                  window.open("https://wa.me/919626344778", "_blank")
+                }
+              >
+                WhatsApp
+              </Button>
+            </nav>
+
+            {/* Mobile Toggle */}
+            <button
+              className="md:hidden p-2"
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            >
+              {mobileMenuOpen ? (
+                <X
+                  size={24}
+                  className={isScrolled ? "text-slate-900" : "text-white"}
+                />
+              ) : (
+                <Menu
+                  size={24}
+                  className={isScrolled ? "text-slate-900" : "text-white"}
+                />
+              )}
+            </button>
+          </div>
         </div>
       </div>
 
-      {/* MOBILE MENU */}
+      {/* Mobile Menu */}
       <AnimatePresence>
         {mobileMenuOpen && (
           <>
-            {/* Overlay */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className="fixed inset-0 bg-black/40 backdrop-blur-sm z-[105]"
+              className="fixed inset-0 bg-black/50 z-30"
               onClick={() => setMobileMenuOpen(false)}
             />
 
-            {/* Menu Panel */}
             <motion.div
-              initial={{ opacity: 0, scale: 0.95, y: -10 }}
-              animate={{ opacity: 1, scale: 1, y: 0 }}
-              exit={{ opacity: 0, scale: 0.95, y: -10 }}
-              className="fixed top-16 left-4 right-4 bg-white rounded-2xl shadow-2xl z-[110] md:hidden border border-slate-100"
+              initial={{ y: -20, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              exit={{ y: -20, opacity: 0 }}
+              className="fixed top-28 left-4 right-4 bg-white/95 backdrop-blur-lg rounded-3xl shadow-2xl z-40 p-6"
             >
-              <div className="flex flex-col p-6 space-y-4">
-                {navLinks.map(link => (
+              <div className="space-y-4">
+                {navLinks.map((link) => (
                   <button
                     key={link.name}
                     onClick={() => handleNavClick(link.href)}
-                    className="flex items-center gap-3 text-lg font-bold p-3 rounded-xl text-slate-900 active:bg-slate-50"
+                    className="flex items-center gap-3 text-lg font-bold text-slate-900"
                   >
-                    <span className="text-slate-400">{link.icon}</span>
+                    {link.icon}
                     {link.name}
                   </button>
                 ))}
 
-                <div className="grid grid-cols-2 gap-3 pt-3 border-t border-slate-100">
+                <div className="grid grid-cols-2 gap-3 pt-4 border-t">
                   <Button
                     variant="outline"
-                    className="h-12 rounded-xl font-bold"
                     onClick={() =>
                       (window.location.href = "tel:+919626344778")
                     }
@@ -182,16 +183,11 @@ export function Navbar() {
                     <Phone size={18} className="mr-2" />
                     Call
                   </Button>
-
                   <Button
-                    className="bg-accent h-12 rounded-xl font-bold shadow-lg"
-                    onClick={() => {
-                      setMobileMenuOpen(false);
-                      window.open(
-                        "https://wa.me/919626344778",
-                        "_blank"
-                      );
-                    }}
+                    className="bg-accent"
+                    onClick={() =>
+                      window.open("https://wa.me/919626344778", "_blank")
+                    }
                   >
                     WhatsApp
                   </Button>

@@ -6,6 +6,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import Home from "./pages/Home";
 import NotFound from "./pages/not-found";
+import { BackgroundAnimation } from "@/components/BackgroundAnimation";
 
 function Router() {
   return (
@@ -21,6 +22,9 @@ function App() {
     <HelmetProvider>
       <QueryClientProvider client={queryClient}>
         <TooltipProvider>
+          {/* BACKGROUND ANIMATION (GLOBAL) */}
+          <BackgroundAnimation />
+
           <Toaster />
           <Router />
         </TooltipProvider>
